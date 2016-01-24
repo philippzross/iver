@@ -1,0 +1,17 @@
+Package: iver
+Type: Package
+Title: Phil's Personal R Functions
+Version: 0.1
+Date: 2016-01-24
+Author: Philipp Ross <philippross369@gmail.com>
+Description: These are my personal R functions I use for work and fun
+License: MIT
+LazyData: TRUE
+Depends:
+  R (>= 3.2.3)
+Imports:
+  servr,
+  knitcitations
+Suggests:
+  knitr
+VignetteBuilder: knitr
