@@ -231,11 +231,11 @@ kill_nb <- function() {
 #' This function will call a script that contains a list of references using
 #' the \code{knitcitations} package
 #'
-#' @details { \code{build_refs} calls \param{script} to build your references
+#' @details { \code{build_refs} calls \code{script} to build your references
 #'     into 'references.bib' in the project root directory. }
 #'
 #' @export
-build_refs <- function(script = "_pages/references.R") {
+build_refs <- function(script = "_build/references.R") {
 
   if(!file.exists(script)){
     stop(paste0(script, " doesn't exist. Abort."))
