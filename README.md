@@ -17,3 +17,10 @@ Installation should be straight forward. First, install the dependencies, then r
 **Commands:**
 
 1. devtools::install_github("thephilross/iver")
+
+## Creating New Knitr-Jekyll Lab Notebook
+
+1. git clone git@github.com:thephilross/nbtemplate.git dir/to/project
+2. cd dir/to/project
+3. git remote remove origin
+4. Create new R Project using RStudio in new directory
