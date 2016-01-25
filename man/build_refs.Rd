@@ -4,14 +4,14 @@
 \alias{build_refs}
 \title{Build the References}
 \usage{
-build_refs(script = "_pages/references.R")
+build_refs(script = "_build/references.R")
 }
 \description{
 This function will call a script that contains a list of references using
 the \code{knitcitations} package
 }
 \details{
-{ \code{build_refs} calls \param{script} to build your references
+{ \code{build_refs} calls \code{script} to build your references
     into 'references.bib' in the project root directory. }
 }
 
