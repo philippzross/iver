@@ -3,6 +3,7 @@
 export(build_nb)
 export(build_refs)
 export(filenamise)
+export(gff2bed12)
 export(kill_nb)
 export(new_entry)
 export(new_page)

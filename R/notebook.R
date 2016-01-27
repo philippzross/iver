@@ -234,6 +234,9 @@ kill_nb <- function() {
 #' @details { \code{build_refs} calls \code{script} to build your references
 #'     into 'references.bib' in the project root directory. }
 #'
+#' @param script Build script to build the bibliography and bibtex file
+#' references.bib
+#'
 #' @export
 build_refs <- function(script = "_build/references.R") {
 

@@ -6,6 +6,10 @@
 \usage{
 build_refs(script = "_build/references.R")
 }
+\arguments{
+\item{script}{Build script to build the bibliography and bibtex file
+references.bib}
+}
 \description{
 This function will call a script that contains a list of references using
 the \code{knitcitations} package
