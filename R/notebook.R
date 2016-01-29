@@ -209,7 +209,7 @@ serve_nb <- function(host = "0.0.0.0",
 #' @export
 kill_nb <- function() {
 
-  cmd <- "'pkill -f jekyll'"
+  cmd <- "pkill -f jekyll"
   cat("Running", cmd, "...\n")
   system(cmd)
   cat("Jekyll server stopped.\n")
