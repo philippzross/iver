@@ -11,7 +11,13 @@ Installation should be straight forward. First, install the dependencies, then r
 
 **Dependencies:**
 
+* [knitr](http://yihui.name/knitr/)
 * [servr](https://github.com/yihui/servr)
+* [GenomicRanges](https://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
+* [rtracklayer](http://www.bioconductor.org/packages//2.7/bioc/html/rtracklayer.html)
+
+**Suggestions**
+
 * [knitcitations](https://github.com/cboettig/knitcitations)
 
 **Commands:**
