@@ -234,7 +234,7 @@ kill_nb <- function() {
 push_nb <- function(config = "_config.yml", site = "_site") {
 
   iver::build_nb(config = config)
-  git_commit <- paste0("git add",
+  git_commit <- paste0("git add ",
                        site, "/*",
                        " && git commit -m 'updated live site'")
   git_push   <- paste0("git subtree push --prefix",
