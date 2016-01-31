@@ -225,7 +225,7 @@ kill_nb <- function() {
 #' \code{push_nb} calls \code{build_nb()} to build your site using your
 #' live site config file and pushes it to the gh-pages branch of your
 #' repository
-#' 
+#'
 #'
 #' @param config The config file used to build the live site
 #' @param site The directory containing the pre-built site
@@ -233,11 +233,11 @@ kill_nb <- function() {
 #' @export
 push_nb <- function(config = "_config.yml", site = "_site") {
 
-  build_nb(config = config)
-  git_commit <- paste0("git add", 
-                       site, "/*", 
+  iver::build_nb(config = config)
+  git_commit <- paste0("git add",
+                       site, "/*",
                        " && git commit -m 'updated live site'")
-  git_push   <- paste0("git subtree push --prefix", 
+  git_push   <- paste0("git subtree push --prefix",
                        site,
                        "origin gh-pages")
   message("Commiting new site...")
