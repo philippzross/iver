@@ -4,12 +4,15 @@
 \alias{push_nb}
 \title{Make notebook live}
 \usage{
-push_nb(config = "_config.yml", site = "_site")
+push_nb(config = "_config.yml", site = "_site", project = TRUE)
 }
 \arguments{
 \item{config}{The config file used to build the live site}
 
 \item{site}{The directory containing the pre-built site}
+
+\item{project}{Whether or not this is being pushed to a project page or
+not on Github}
 }
 \description{
 Push your built site to its linked github repository under the gh-pages

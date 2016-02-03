@@ -216,37 +216,6 @@ kill_nb <- function() {
 
 }
 
-#' Make notebook live
-#'
-#' Push your built site to its linked github repository under the gh-pages
-#' branch.
-#'
-#' @details
-#' \code{push_nb} calls \code{build_nb()} to build your site using your
-#' live site config file and pushes it to the gh-pages branch of your
-#' repository
-#'
-#'
-#' @param config The config file used to build the live site
-#' @param site The directory containing the pre-built site
-#'
-#' @export
-push_nb <- function(config = "_config.yml", site = "_site") {
-
-  iver::build_nb(config = config)
-  git_commit <- paste("git add",
-                       paste0(site, "/*"),
-                       "&& git commit -m 'updated live site'")
-  git_push   <- paste("git subtree push --prefix",
-                       site,
-                       "origin gh-pages")
-  message("Commiting new site...")
-  system(git_commit)
-  message("Pushing to GitHub...")
-  system(git_push)
-
-}
-
 #' Build the References
 #'
 #' This function will call a script that contains a list of references using
@@ -268,5 +237,49 @@ build_refs <- function(script = "_build/references.R") {
   source(script)
   # check to make sure references.bib was created
   #if(!file.exists(""))
+
+}
+
+#' Make notebook live
+#'
+#' Push your built site to its linked github repository under the gh-pages
+#' branch.
+#'
+#' @details
+#' \code{push_nb} calls \code{build_nb()} to build your site using your
+#' live site config file and pushes it to the gh-pages branch of your
+#' repository
+#'
+#'
+#' @param config The config file used to build the live site
+#' @param site The directory containing the pre-built site
+#' @param project Whether or not this is being pushed to a project page or
+#' not on Github
+#'
+#' @export
+push_nb <- function(config = "_config.yml", site = "_site", project = TRUE) {
+
+  iver::build_nb(config = config)
+  git_commit <- paste("git add",
+                      paste0(site, "/*"),
+                      "&& git commit -m 'updated live site'")
+
+  # by default push to gh-pages branch
+  # but switch to master branch if it is not a project page
+  branch <- "gh-pages"
+  if(!project){
+    branch <- "master"
+    git_push <- paste("git push", "origin", branch)
+  } else {
+    git_push   <- paste("git subtree push --prefix",
+                        site,
+                        "origin",
+                        branch)
+  }
+
+  message("Commiting new site...")
+  system(git_commit)
+  message("Pushing to GitHub...")
+  system(git_push)
 
 }
