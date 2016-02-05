@@ -2,6 +2,8 @@
 
 export(build_nb)
 export(build_refs)
+export(copy_from_dropbox)
+export(copy_to_dropbox)
 export(filenamise)
 export(gff2bed12)
 export(kill_nb)
