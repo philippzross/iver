@@ -78,11 +78,18 @@ new_entry <- function(title    = "New entry",
   # write skeleton post to empty file
   post <- readLines(skeleton)
   post[grepl("title: ", post)] <- paste0("title: ", title)
+  post[grepl("source()", post)] <- paste0("source(", "_rmd/whereami/", r_name, ")")
   writeLines(post, rmd_name)
 
   # write out an empty R file as well, in case that's useful
   writeLines(
-    c("# This R file accomanies the .Rmd file", paste("#", rmd_name), ""),
+    c("# This R file accomanies the .Rmd file",
+      paste("#", rmd_name),
+      "",
+      "# load necessary libraries",
+      "library(readr)",
+      "#knit everything from the project root",
+      "knitr::opts_knit$set(root.dir = \"./\")"),
     r_name
   )
 
